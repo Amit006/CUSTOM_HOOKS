@@ -14,6 +14,8 @@ function App() {
     fetchApiData(url);
   }, []);
 
+  if (error) return <div>Error: {error.message}</div>;
+
   return (
     <>
       <div>
@@ -34,9 +36,6 @@ function App() {
           <code>{JSON.stringify(fetchedData)}</code>
         </div>
       )}
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
